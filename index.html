@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chirag Patole — Data Quality & Analytics Professional</title>
+<style>
+  :root{
+    --ink:#0f172a;
+    --muted:#44506b;
+    --faint:#6b7690;
+    --line:#dfe3ea;
+    --accent:#0d6b4f;
+    --accent-dark:#094e39;
+    --accent-soft:#e3f1ea;
+    --gold:#a9791f;
+    --bg:#ffffff;
+    --bg-alt:#f4f6f9;
+    --card:#ffffff;
+    --dark:#0a1220;
+    --dark-text:#f6f8fb;
+    --dark-muted:#a7b1c4;
+    --dark-line:#232d42;
+    --shadow:0 1px 2px rgba(15,23,42,0.05), 0 1px 3px rgba(15,23,42,0.06);
+    --shadow-hover:0 8px 20px rgba(15,23,42,0.10);
+    --maxw:900px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,18,32,0.96);
+    border-bottom:1px solid var(--dark-line);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .brand{font-weight:700;letter-spacing:0.05em;font-size:14.5px;color:var(--dark-text);}
+  .navlinks{display:flex;gap:28px;}
+  .navlinks a{color:var(--dark-muted);font-size:13.5px;font-weight:600;letter-spacing:0.02em;text-transform:uppercase;}
+  .navlinks a:hover{color:#ffffff;text-decoration:none;}
+
+  /* HERO */
+  header.hero{
+    padding:96px 0 72px;
+    background:
+      radial-gradient(900px 420px at 15% -10%, rgba(13,107,79,0.35), transparent 60%),
+      var(--dark);
+    color:var(--dark-text);
+    border-bottom:4px solid var(--accent);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:#7fd9b6;font-weight:700;margin-bottom:18px;
+    padding:6px 12px;border:1px solid rgba(127,217,182,0.35);border-radius:20px;
+    background:rgba(13,107,79,0.15);
+  }
+  h1{
+    font-size:48px;line-height:1.12;margin:0 0 12px;
+    letter-spacing:-0.02em;font-weight:800;color:#ffffff;
+  }
+  .role{font-size:19px;color:var(--dark-muted);margin:0 0 26px;font-weight:500;}
+  .contact-row{
+    display:flex;flex-wrap:wrap;gap:9px 12px;
+    margin-bottom:32px;
+  }
+  .contact-row span{
+    white-space:nowrap;font-size:13.5px;color:var(--dark-text);
+    background:rgba(255,255,255,0.06);border:1px solid var(--dark-line);
+    padding:7px 13px;border-radius:20px;
+  }
+  .contact-row a{color:var(--dark-text);font-weight:600;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:6px;
+    font-size:14px;font-weight:700;letter-spacing:0.01em;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(13,107,79,0.4);}
+  .btn-primary:hover{background:#0f7c5c;text-decoration:none;transform:translateY(-1px);}
+  .btn-ghost{border:1px solid rgba(255,255,255,0.28);color:#fff;}
+  .btn-ghost:hover{border-color:#7fd9b6;text-decoration:none;color:#7fd9b6;transform:translateY(-1px);}
+
+  .summary{
+    font-size:17px;color:var(--dark-muted);margin-top:34px;max-width:740px;
+    padding-top:30px;border-top:1px solid var(--dark-line);
+  }
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  section.alt{background:var(--bg-alt);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 34px;}
+  .sec-num{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:13px;color:var(--gold);font-weight:700;}
+  h2{
+    font-size:13px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--ink);font-weight:800;margin:0;
+    padding-bottom:0;
+  }
+  .sec-head::after{
+    content:"";flex:1;height:1px;background:var(--line);
+  }
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;}
+  .skill-cat{
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:8px;padding:18px 20px;box-shadow:var(--shadow);
+    transition:box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .skill-cat:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px);}
+  .skill-cat h3{font-size:15px;margin:0 0 7px;font-weight:700;color:var(--ink);}
+  .skill-cat p{margin:0;color:var(--muted);font-size:14.5px;}
+
+  /* EXPERIENCE */
+  .job{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:26px 28px;margin-bottom:20px;box-shadow:var(--shadow);
+  }
+  .job:last-child{margin-bottom:0;}
+  .job-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:4px 16px;margin-bottom:4px;
+  }
+  .job-title{font-size:18px;font-weight:700;color:var(--ink);}
+  .job-date{
+    font-size:12.5px;color:var(--gold);white-space:nowrap;font-weight:700;
+    letter-spacing:0.03em;text-transform:uppercase;
+  }
+  .job-org{font-size:14.5px;color:var(--accent);font-weight:600;margin-bottom:14px;}
+  .job ul{margin:0;padding-left:20px;}
+  .job li{margin-bottom:10px;color:var(--muted);font-size:15px;}
+  .job li:last-child{margin-bottom:0;}
+  .job li b{color:var(--ink);font-weight:700;}
+  .job li::marker{color:var(--accent);}
+
+  /* PROJECTS */
+  .project{
+    padding:22px 24px;border:1px solid var(--line);border-radius:10px;
+    margin-bottom:16px;background:var(--card);box-shadow:var(--shadow);
+    transition:box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .project:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px);}
+  .project:last-child{margin-bottom:0;}
+  .project-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:4px 16px;margin-bottom:8px;
+  }
+  .project-title{font-size:15.5px;font-weight:700;color:var(--ink);}
+  .project-date{
+    font-size:12px;color:var(--gold);white-space:nowrap;font-weight:700;
+    letter-spacing:0.03em;text-transform:uppercase;
+  }
+  .project p{margin:0;color:var(--muted);font-size:14.5px;}
+  .project-meta{font-size:13px;color:var(--faint);margin-bottom:10px;}
+  .project-meta a{color:var(--accent);font-weight:600;}
+  .project-list{margin:0;padding-left:18px;}
+  .project-list li{margin-bottom:8px;color:var(--muted);font-size:14.5px;}
+  .project-list li:last-child{margin-bottom:0;}
+  .project-list li b{color:var(--ink);font-weight:700;}
+  .project-list li::marker{color:var(--accent);}
+
+  /* EDUCATION */
+  .edu{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow);
+  }
+  .edu:last-child{margin-bottom:0;}
+  .edu-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:4px 16px;
+  }
+  .edu-title{font-size:16.5px;font-weight:700;color:var(--ink);}
+  .edu-date{
+    font-size:12.5px;color:var(--gold);white-space:nowrap;font-weight:700;
+    letter-spacing:0.03em;text-transform:uppercase;
+  }
+  .edu-org{font-size:14.5px;color:var(--accent);font-weight:600;margin-bottom:8px;}
+  .edu p{margin:0;color:var(--muted);font-size:14.5px;}
+
+  /* CERTS */
+  .certs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}
+  .certs li{
+    font-size:14.5px;color:var(--muted);padding:14px 18px;position:relative;
+    background:var(--card);border:1px solid var(--line);border-radius:8px;
+    margin-bottom:10px;padding-left:38px;font-weight:500;
+  }
+  .certs li:last-child{margin-bottom:0;}
+  .certs li::before{
+    content:"✓";position:absolute;left:14px;top:13px;width:16px;height:16px;
+    font-size:12px;font-weight:800;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:50%;background:var(--accent);
+  }
+
+  /* CONTACT / FOOTER */
+  section#contact{background:var(--dark);color:var(--dark-text);padding:72px 0;}
+  section#contact .sec-head::after{background:var(--dark-line);}
+  section#contact h2{color:var(--dark-text);}
+  .contact-card{text-align:center;max-width:640px;margin:0 auto;}
+  .contact-card p{color:var(--dark-muted);font-size:15px;margin-bottom:28px;}
+  .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+  footer{padding:22px 0;text-align:center;color:var(--dark-muted);font-size:13px;background:var(--dark);border-top:1px solid var(--dark-line);}
+
+  @media (max-width:640px){
+    h1{font-size:34px;}
+    .navlinks{gap:16px;}
+    .navlinks a{font-size:12px;}
+    .skills-grid{grid-template-columns:1fr;}
+    header.hero{padding:64px 0 48px;}
+    section{padding:48px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">CHIRAG PATOLE</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Data Quality &amp; Analytics</div>
+    <h1>Chirag Patole</h1>
+    <p class="role">Data Quality &amp; Analytics Professional — SQL, Python, Power BI, KPI Design</p>
+    <div class="contact-row">
+      <span>📍 Berlin, Germany</span>
+      <span>✉️ <a href="mailto:chiragpatole2002@gmail.com">chiragpatole2002@gmail.com</a></span>
+      <span>📞 +49 160 4283013</span>
+      <span>🔗 <a href="https://linkedin.com/in/chiragpatole" target="_blank" rel="noopener">linkedin.com/in/chiragpatole</a></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:chiragpatole2002@gmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/chiragpatole" target="_blank" rel="noopener">View LinkedIn</a>
+    </div>
+    <p class="summary" id="about">
+      Data Analyst with an M.Sc. in Data Science, focused on data quality, KPI design, and process automation
+      across ERP/CRM environments. Cut audit and reconciliation effort by 40% through end-to-end data-lineage
+      mapping and root-cause analysis, reduced reporting turnaround by 15%, and built self-service Power BI
+      dashboards used across Controlling, Sales, and IT. Proficient in SQL (CTEs, window functions), Python
+      (pandas, numpy), and Power BI, with applied experience in LLM/RAG-based data workflows.
+    </p>
+  </div>
+</header>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Core Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h3>Data Quality &amp; Analytics</h3>
+        <p>Root-cause analysis, data-lineage mapping, validation workflow design, KPI definition, data-quality auditing, cohort analysis, EDA</p>
+      </div>
+      <div class="skill-cat">
+        <h3>SQL &amp; Data Modelling</h3>
+        <p>Complex CTEs, window functions, query optimisation, dbt transformations, ERP/CRM data structures (SAP, Microsoft Dynamics)</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Python</h3>
+        <p>Pandas, NumPy, scikit-learn (regression, clustering, predictive modelling); data cleaning and transformation</p>
+      </div>
+      <div class="skill-cat">
+        <h3>BI &amp; Reporting</h3>
+        <p>Power BI (drill-down, self-service), Tableau, Excel (Power Query, Pivot Tables)</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Process &amp; Pricing Analytics</h3>
+        <p>End-to-end process redesign, workflow automation, pricing analysis, profitability reporting, margin analysis, discount structures</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Systems &amp; Tools</h3>
+        <p>SAP (familiar), Microsoft Dynamics (CRM), AWS (S3, Glue, Athena), Azure, GCP / BigQuery, JIRA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Professional Experience</h2></div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Data Analyst Intern</div>
+        <div class="job-date">Feb 2026 – May 2026</div>
+      </div>
+      <div class="job-org">SparkInn Solutions Pvt. Ltd. · Remote</div>
+      <ul>
+        <li>Reduced report preparation time by <b>15%</b> across 4–5 client accounts by owning end-to-end automation of recurring data quality and reporting workflows, standardising templates and scheduled refresh cycles to eliminate manual rework.</li>
+        <li>Improved data quality and KPI reliability across 4–5 client portfolios by leading data cleaning, transformation, and root-cause investigation of recurring data issues across ERP and CRM source systems.</li>
+        <li>Accelerated executive decision cycles through consistent bi-weekly delivery of stakeholder-ready dashboards, designing and maintaining self-service Power BI and Excel dashboards to monitor KPI and data quality performance.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Trainee – Data &amp; BI Analyst</div>
+        <div class="job-date">Jul 2022 – Jul 2023</div>
+      </div>
+      <div class="job-org">Datamatics · Nashik, India</div>
+      <ul>
+        <li>Cut audit and reconciliation effort by <b>~40%</b> by owning end-to-end data quality process redesign and data-lineage mapping across ERP and CRM systems for full KPI traceability.</li>
+        <li>Improved reporting accuracy by <b>15%</b> by redesigning and automating SQL-based data quality validation workflows, including root-cause analysis of recurring discrepancies across large-scale datasets.</li>
+        <li>Translated business requirements into concrete data quality checks and KPI specifications by leading cross-functional workshops with Controlling, Sales, and IT stakeholders.</li>
+        <li>Increased adoption of centralised reporting tools across non-technical business units by designing drill-down Power BI and Tableau dashboards aligned to data quality and KPI hierarchies.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Key Projects</h2></div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">Fintech Analytics Pipeline (Terraform, dbt, GCP, CI/CD)</div>
+        <div class="project-date">Jul 2026</div>
+      </div>
+      <div class="project-meta">Personal Project · Terraform, dbt, BigQuery, GitHub Actions, Python · <a href="https://github.com/chiragpatole/fintech-analytics-pipeline" target="_blank" rel="noopener">GitHub</a></div>
+      <ul class="project-list">
+        <li>Architected a fully automated GCP analytics pipeline using <b>Terraform</b> for infrastructure-as-code, provisioning BigQuery, Cloud Storage, and IAM while eliminating static credentials through Workload Identity Federation-based CI/CD authentication.</li>
+        <li>Built a <b>10-model dbt project</b> across staging, intermediate, and mart layers with <b>24 automated data tests</b>, powering fraud-detection and RFM customer-segmentation analytics on 100,000+ transaction records.</li>
+        <li>Designed and debugged a keyless CI/CD pipeline in GitHub Actions, implementing Slim CI to rebuild only affected dbt models per change and resolving four distinct GCP IAM permission issues to reach a fully automated, zero-manual-step deployment.</li>
+        <li>Layered a FinOps cost-governance track onto the pipeline, connecting GCP billing exports to dedicated dbt models and a Terraform-managed budget alert, keeping the entire project within <b>GCP's free tier</b>.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">Spotify Music Trends Analysis — AWS Data Pipeline</div>
+        <div class="project-date">Jul 2026</div>
+      </div>
+      <div class="project-meta">Python, PySpark, AWS S3, Redshift Serverless, QuickSight, Apache Airflow · <a href="https://github.com/chiragpatole/spotify-trends-aws" target="_blank" rel="noopener">GitHub</a></div>
+      <ul class="project-list">
+        <li>Built an end-to-end ETL pipeline processing <b>1.2M+ Spotify tracks</b> using PySpark, cleaning and transforming a 330MB raw CSV into structured Parquet files across 5 analytical tables for efficient downstream querying.</li>
+        <li>Engineered a cloud data warehouse on <b>AWS Redshift Serverless</b>, loading processed data via S3 COPY commands and authoring 10 analytical SQL queries to surface music consumption trends spanning 7 decades.</li>
+        <li>Designed an interactive QuickSight dashboard revealing a <b>96% increase in track energy</b> from the 1950s to 2020s and 30%+ growth in explicit content by 2020, translating raw data into actionable listener-behavior insights.</li>
+        <li>Orchestrated the full pipeline with an Apache Airflow DAG on a weekly schedule across extract, transform, load, and visualization layers, ensuring reliable, automated end-to-end execution.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">Automated Customer-Behaviour Analytics Pipeline (AWS)</div>
+        <div class="project-date">Dec 2025</div>
+      </div>
+      <p>Cut time-to-insight from hours to minutes by building a zero-touch pipeline (S3 → Glue → Athena → Power BI) processing 100K+ events daily, enabling non-technical stakeholders to self-serve without a support ticket.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">Movie Recommender System (KNN + TF-IDF)</div>
+        <div class="project-date">Feb 2025</div>
+      </div>
+      <p>Reached NDCG@10 = 0.78 on 100,000+ ratings combining collaborative filtering with content-based modelling; built a reproducible offline A/B evaluation harness (MAP, NDCG).</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">LLM/RAG Document Intelligence Agent (LangChain, OpenAI)</div>
+        <div class="project-date">Mar 2025</div>
+      </div>
+      <p>Built a retrieval-augmented question-answering agent over unstructured documents, applying LLM-based techniques to automate information extraction and reduce manual document review.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Education</h2></div>
+
+    <div class="edu">
+      <div class="edu-head">
+        <div class="edu-title">M.Sc. Data Science</div>
+        <div class="edu-date">Oct 2023 – Oct 2025</div>
+      </div>
+      <div class="edu-org">University of Europe for Applied Sciences, Potsdam</div>
+      <p>Focus: Data Analytics, Statistics, Machine Learning, Data Visualisation, Business Intelligence, SQL, Python, JIRA (group project coordination). Thesis: Analytics Adoption &amp; Decision Quality in Banking (DDDM, RBV, DOI frameworks).</p>
+    </div>
+
+    <div class="edu">
+      <div class="edu-head">
+        <div class="edu-title">B.Sc. Computer Science</div>
+        <div class="edu-date">Apr 2019 – Apr 2022</div>
+      </div>
+      <div class="edu-org">University of Pune, India</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Certifications</h2></div>
+    <ul class="certs">
+      <li>AWS Academy Cloud Foundations</li>
+      <li>Complete ML &amp; Data Science Bootcamp (Udemy)</li>
+      <li>BA Data Science Job Simulation (Forage)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Get In Touch</h2></div>
+    <div class="contact-card">
+      <p>Based in Berlin, Germany · Sofort verfügbar (available immediately) · Deutsch B2 · English Fluent</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:chiragpatole2002@gmail.com">chiragpatole2002@gmail.com</a>
+        <a class="btn btn-ghost" href="tel:+491604283013">+49 160 4283013</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/chiragpatole" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Chirag Patole. Built with care.
+</footer>
+
+</body>
+</html>
